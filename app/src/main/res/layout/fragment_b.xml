@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    tools:context=".Fragments.BFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quan ly sinh vien"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:background="#000"/>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Spinner
+            android:id="@+id/spinnerUnit"
+            android:layout_width="250dp"
+            android:layout_height="50dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNewUnit"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:background="@drawable/button_backgound_start"
+            android:text="Thêm Unit" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Spinner
+            android:id="@+id/spinnerLesson"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNewLesson"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+
+            android:background="@drawable/button_backgound_start"
+            android:text="Thêm Lesson" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_marginTop="10dp"
+            android:id="@+id/edtQuestion"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_border_black"
+            android:padding="5dp"
+            android:hint="@string/add_question"
+            android:textColorHint="@color/hint" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Đáp án"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <EditText
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_border_black"
+                android:padding="5dp"
+                android:hint="@string/question_1"
+                android:textColorHint="@color/hint"
+                android:id="@+id/edtOption1"/>
+
+            <EditText
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_border_black"
+                android:padding="5dp"
+                android:hint="@string/question_2"
+                android:textColorHint="@color/hint"
+                android:id="@+id/edtOption2"/>
+            <EditText
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_border_black"
+                android:padding="5dp"
+                android:hint="@string/question_3"
+                android:textColorHint="@color/hint"
+                android:id="@+id/edtOption3"/>
+            <EditText
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_border_black"
+                android:padding="5dp"
+                android:hint="@string/question_4"
+                android:textColorHint="@color/hint"
+                android:id="@+id/edtOption4"/></LinearLayout>
+
+        <RadioGroup
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:checked="true"
+                android:id="@+id/radOption1"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:checked="true"
+                android:id="@+id/radOption2"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="3"
+                android:checked="true"
+                android:id="@+id/radOption3"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:checked="true"
+                android:id="@+id/radOption4"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <EditText
+        android:layout_marginLeft="5dp"
+        android:id="@+id/edtImgUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext_border_black"
+        android:padding="5dp"
+        android:hint="@string/url_img"
+        android:textColorHint="@color/hint" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/Widget.AppCompat.Button"
+            android:background="@drawable/button_backgound_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thêm"
+            android:id="@+id/btnThem"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/Widget.AppCompat.Button"
+            android:background="@drawable/button_backgound_create"
+            android:id="@+id/btnXoa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Xóa" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/Widget.AppCompat.Button"
+            android:background="@drawable/button_backgound_res"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sửa"
+            android:id="@+id/btnSua"/>
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:iconifiedByDefault="false"
+            android:queryHint="Tim kiem"/>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/lvDanhSach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:divider="#0A6158"
+        android:dividerHeight="2dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chon het"
+            android:id="@+id/btnChonHet"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bo chon"
+            android:id="@+id/btnBoChon"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xoa DS"
+            android:id="@+id/btnXoaDS"
+            />
+    </LinearLayout>
+
+
+
+</LinearLayout>
