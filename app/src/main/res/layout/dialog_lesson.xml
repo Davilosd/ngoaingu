@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top|right"
+
+        android:padding="10dp"
         android:id="@+id/tvCancel"
         android:src="@drawable/baseline_cancel_24"/>
 
     <TextView
+        android:id="@+id/tvLesson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        />
+    <TextView
         android:id="@+id/tvChosenLesson"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         />
     <Button
         android:id="@+id/btnLearn"
@@ -22,14 +34,19 @@
         android:layout_height="wrap_content"
         style="@style/Widget.AppCompat.Button"
         android:background="@drawable/button_backgound_start"
+        android:layout_gravity="center"
         android:text="Học"/>
     <TextView
+        android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvHintTitle"/>
     <TextView
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:id="@+id/tvHint"/>
 
 </LinearLayout>

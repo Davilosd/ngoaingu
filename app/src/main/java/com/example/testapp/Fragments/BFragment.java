@@ -439,6 +439,9 @@ public class BFragment extends Fragment {
         else
             answer = edtOption4.getText();
 
+        if(edtImgUrl.getText().toString().length()<10){
+            
+        }
         Question q = new Question(edtQuestion.getText().toString(), answer.toString(), options, Common.currentLid, edtImgUrl.getText().toString(), id);
         if(q.getId().equals("")){
             addQuestion(q);

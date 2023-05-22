@@ -15,4 +15,5 @@ public class Common {
     public static String currentLessonHint;
     public static String currentLessonHintTitle;
     public static String currentUid;
+    public static String currentLesson;
 }

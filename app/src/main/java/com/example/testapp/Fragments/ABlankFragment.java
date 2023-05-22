@@ -240,6 +240,7 @@ public class ABlankFragment extends Fragment {
                 Common.currentLid = lesson.getLid();
                 Common.currentLessonHint = lesson.getHint();
                 Common.currentLessonHintTitle = lesson.getHintTitle();
+                Common.currentLesson = lesson.getName();
                 Common.isThisLessonCompleted = false;
                 for(int j=0;j<alCompleteLessons.size();j++){
 
@@ -273,6 +274,7 @@ public class ABlankFragment extends Fragment {
         TextView tvChosenLesson = dialog.findViewById(R.id.tvChosenLesson);
         TextView tvHint = dialog.findViewById(R.id.tvHint);
         TextView tvHintTitle = dialog.findViewById(R.id.tvHintTitle);
+        TextView tvLesson = dialog.findViewById(R.id.tvLesson);
         Button btnLearn = dialog.findViewById(R.id.btnLearn);
         ImageView tvCancel = dialog.findViewById(R.id.tvCancel);
 
@@ -282,6 +284,7 @@ public class ABlankFragment extends Fragment {
             tvChosenLesson.setText("Đã hoàn thành" );
         tvHint.setText(Common.currentLessonHint);
         tvHintTitle.setText(Common.currentLessonHintTitle);
+        tvLesson.setText(Common.currentLesson);
         btnLearn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

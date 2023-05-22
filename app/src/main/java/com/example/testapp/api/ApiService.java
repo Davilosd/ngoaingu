@@ -12,13 +12,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 
 public interface ApiService {
+    public static String localHost = "http://192.168.1.7:3000/";
 
     Gson gson = new GsonBuilder()
             .setDateFormat("yyyy-mm-dd")
             .create();
 
     Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://192.168.1.11:3000/")
+            .baseUrl(localHost)
             .addConverterFactory(GsonConverterFactory.create())
             .build();
+
 }

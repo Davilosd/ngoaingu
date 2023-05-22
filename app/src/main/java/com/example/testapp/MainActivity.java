@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.example.testapp.Fragments.ABlankFragment;
 import com.example.testapp.api.ApiService;
+import com.example.testapp.data.model.Accounts;
 import com.example.testapp.ui.Common.Common;
 import com.example.testapp.ui.login.LoginActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -99,14 +100,38 @@ public class MainActivity extends AppCompatActivity {
         btnNoLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                User user = new User();
-                user.setEmail("guess");
-                user.setPassword("guess");
-                Common.currentUser = user.getEmail();
-                Intent learn = new Intent(MainActivity.this, Learn.class);
-                startActivity(learn);
-                //finish????
+                Accounts accounts = new Accounts("guess", "guess", "", "", "", "");
+
+                Call<Accounts> call = jsonPlaceHolderApi.createPost(accounts);
+                call.enqueue(new Callback<Accounts>() {
+
+                    @Override
+                    public void onResponse(Call<Accounts> call, Response<Accounts> response) {
+                        if (!response.isSuccessful()) {
+                            //textViewResult.setText("code: " + response.code());
+                            Toast.makeText(getApplicationContext(), "login sucsses code", Toast.LENGTH_LONG).show();
+                            return;
+                        }
+                        Accounts postResponse = response.body();
+                        Common.currentUser = postResponse.getEmail();
+                        Common.currentAccount = postResponse;
+                        Common.token = postResponse.getToken();
+
+                        Intent learn = new Intent(MainActivity.this, Learn.class);
+
+                        startActivity(learn);
+                        finish();
+                    }
+
+                    @Override
+                    public void onFailure(Call<Accounts> call, Throwable t) {
+                        Toast.makeText(getApplicationContext(), "loi dang nhap: " + t.toString(), Toast.LENGTH_LONG).show();
+                        System.out.println(t.toString());
+                    }
+
+                });
             }
-        });
-    }
+                });
+
+        }
 }

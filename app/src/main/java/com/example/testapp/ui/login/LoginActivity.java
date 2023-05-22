@@ -147,8 +147,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
-                ///////////////
                 Accounts accounts = new Accounts(usernameEditText.getText().toString(), passwordEditText.getText().toString(), "","","","");
 
                 Call<Accounts> call = jsonPlaceHolderApi.createPost(accounts);
@@ -161,19 +159,7 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "login sucsses code", Toast.LENGTH_LONG).show();
                             return;
                         }
-
                         Accounts postResponse = response.body();
-//                        for (Accounts post : postResponse) {
-//                            String content = "";
-//
-//                            content += "Email: " + post.getEmail() + "\n";
-//                            content += "Password: " + post.getPassword() + "\n\n";
-//                            account = post;
-//                            user.setEmail(post.getEmail());
-//                            Common.currentUser = user.getEmail();
-//                            Common.currentAccount = post;
-//
-//                        }
                         Common.currentUser = postResponse.getEmail();
                         Common.currentAccount = postResponse;
                         Common.token = postResponse.getToken();
@@ -191,9 +177,6 @@ public class LoginActivity extends AppCompatActivity {
                         System.out.println(t.toString());
                     }
                 });
-
-                ////////////////
-
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
